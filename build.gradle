@@ -1,0 +1,49 @@
+plugins {
+    id 'application'
+    id 'org.springframework.boot' version '3.2.4'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = "17"
+    modules = ['javafx.controls']
+}
+
+mainClassName = 'bg.tuvarna.oop.dicestatistics.DiceStatisticsApplication'
+
+group = 'bg.tu-varna.oop'
+version = '0.0.1-SNAPSHOT'
+
+//java {
+//    sourceCompatibility = '17'
+//}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation group: 'org.openjfx', name: 'javafx-controls', version: '23-ea+3'
+    implementation group: 'org.openjfx', name: 'javafx-graphics', version: '23-ea+3'
+    implementation group: 'org.openjfx', name: 'javafx-fxml', version: '23-ea+3'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-integration', version: '3.2.4'
+    implementation group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '3.2.0-M2'
+    implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '8.0.1.Final'
+    implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.3.0'
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
