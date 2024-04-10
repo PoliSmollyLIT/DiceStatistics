@@ -6,15 +6,24 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import static bg.tuvarna.oop.core.api.newgame.NewGame.*;
+
 @Component
-public class SimulationController {
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
+public class SimulationController implements Initializable {
     @FXML
     private TextArea numberrolls;
 
@@ -64,14 +73,19 @@ public class SimulationController {
             winnertxtbox.setVisible(true);
         }
         else{
-            NewGame.NewGameInput input = NewGame.NewGameInput.builder()
+            NewGameInput input = NewGameInput.builder()
                     .maxDiesRows(numRolls)
                     .player1Id(Long.getLong(choosedPlayer1))
                     .player2Id(Long.getLong(choosedPlayer2))
                     .build();
-            NewGame.NewGameResponse response = newGame.process(input);
+            NewGameResponse response = newGame.process(input);
             winnertxtbox.setText("The winner is" + response.getWinningPlayerId().toString());
             winnertxtbox.setVisible(true);
         }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
     }
 }

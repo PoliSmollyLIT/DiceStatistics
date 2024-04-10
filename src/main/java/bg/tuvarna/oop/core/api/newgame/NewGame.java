@@ -5,7 +5,9 @@ import bg.tuvarna.oop.core.api.base.OperationInput;
 import bg.tuvarna.oop.core.api.base.OperationResult;
 import lombok.*;
 
-public interface NewGame extends Operation<NewGame.NewGameInput, NewGame.NewGameResponse> {
+import static bg.tuvarna.oop.core.api.newgame.NewGame.*;
+
+public interface NewGame extends Operation<NewGameInput, NewGameResponse> {
     @Builder
     @Getter
     @Setter(AccessLevel.PRIVATE)
