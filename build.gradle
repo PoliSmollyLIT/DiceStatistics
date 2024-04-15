@@ -41,6 +41,64 @@ dependencies {
 //    implementation group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '3.2.0-M2'
     implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '8.0.1.Final'
     implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.3.0'
+
+
+    // Spring Boot Starter Data JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Spring Boot DevTools
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Spring Boot Starter Integration
+    implementation 'org.springframework.boot:spring-boot-starter-integration'
+
+    // JavaFX Controls
+    implementation 'org.openjfx:javafx-controls:17.0.6'
+
+    // JavaFX FXML
+    implementation 'org.openjfx:javafx-fxml:17.0.6'
+
+    // JavaFX Web
+    implementation 'org.openjfx:javafx-web:17.0.6'
+
+    // ControlsFX
+    implementation 'org.controlsfx:controlsfx:11.1.2'
+
+    // Apache Log4j API
+    implementation 'org.apache.logging.log4j:log4j-api:2.22.0'
+
+    // Apache Log4j Core
+    implementation 'org.apache.logging.log4j:log4j-core:2.22.0'
+
+    // Log4j 1.x
+    implementation 'log4j:log4j:1.2.17'
+
+    // Spring Boot
+    implementation 'org.springframework.boot:spring-boot:3.1.5'
+
+    // Spring Beans
+    implementation 'org.springframework:spring-beans:6.0.11'
+
+    // MySQL Connector/J
+//    implementation 'com.mysql:mysql-connector-java:8.2.0'
+
+    // Hibernate Validator
+    implementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+
+    // Spring Boot Starter Validation
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // Jakarta Validation API
+    implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
+
+    // Apache Commons Lang
+    implementation 'org.apache.commons:commons-lang3:3.14.0'
+
+    // Spring Boot Starter Test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // JUnit Jupiter Engine
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.1'
 }
 
 tasks.named('test') {

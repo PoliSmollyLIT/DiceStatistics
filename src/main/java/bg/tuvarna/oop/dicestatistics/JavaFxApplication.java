@@ -18,7 +18,7 @@ public class JavaFxApplication extends Application {
     @Override
     public void init() throws Exception {
         AppContext.getInstance().setContext(SpringApplication.run(DiceStatisticsApplication.class));
-        FXMLLoader fxmlLoader = new FXMLLoader(JavaFxApplication.class.getResource("/fxmls/login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(JavaFxApplication.class.getResource("/fxml/simulation.fxml"));
         fxmlLoader.setControllerFactory(AppContext.getInstance().getContext()::getBean);
         rootNode = fxmlLoader.load();
     }
